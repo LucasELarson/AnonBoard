@@ -1,0 +1,126 @@
+
+
+body{
+   background-color: rgb(67, 67, 67);
+   margin: 0%;
+   overflow: scroll;
+}
+
+#app{
+   display: grid;
+}
+
+#header{
+   background-color: brown;
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+}
+
+   #comment-container{
+      display: none;
+   }
+
+#body{
+   width: 100vw;
+   display: grid;
+}
+
+   #topic-picker{
+      display: grid;
+      align-items: center;
+      grid-auto-flow: column;
+      grid-auto-columns: 15%;
+      gap: 10%;
+      grid-template-columns: unset;
+      grid-template-rows: unset;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      justify-content:space-around ;
+   }
+
+   #topic-picker::-webkit-scrollbar { 
+      background-color: gray
+   }
+
+      #topic-tile{
+         display: grid;
+         background-color: rgb(142, 142, 142);
+         justify-content: center;
+         min-height: 2.5vw;
+         max-height: max-content;
+         min-width: 10vw;
+         max-width: max-content;
+         margin: 5% 0% 5% 0%;
+         border-radius: 10px;
+         grid-template-rows: 8fr 5fr;
+         justify-items: center;
+         padding: 5%;
+      }
+
+         #topic-title{
+            display: grid;
+            align-items:center;
+            font-weight: 800;
+            font-size: 100%;
+            grid-row: 1/2;
+         }
+
+         #comment-count{
+            display: grid;
+            align-items:center;
+            font-weight: 300;
+            font-size: 100%;
+            grid-row: 2/3;
+         }
+
+   #topic{
+      display: grid;
+      width: 100vw;
+      justify-content: center;
+   }
+
+      #topic-prompt{
+         background-color: white;
+         width: 75vw;
+         min-height: 3vw;
+         max-height: 10vw;
+         overflow-y: scroll;
+         padding: 1vw;
+      }
+
+      #topic-prompt::-webkit-scrollbar { 
+         display: none;
+      }
+
+      #message-container{
+         padding: 1vw;
+         width: 75vw;
+         height: 95vh;
+         display: grid;
+         /* grid-auto-flow: row; */
+         /* grid-auto-rows: 10vh; */
+         /* row-gap: 5%; */
+         grid-template-columns: unset;
+         grid-template-rows: auto;
+         overflow-y: scroll;
+         overflow-x: hidden;
+         justify-content:space-around ;
+         background-color: aqua;
+      }
+
+      #message-container::-webkit-scrollbar{
+         display: none;
+      }
+
+         #message{
+            background-color: rgb(142, 142, 142);
+            width: 45vw;
+            padding: 1vh 5vw 1vh 5vw;
+            display: flex;
+            overflow-y: scroll;
+            min-height: 10vh;
+            max-height: max-content;
+            /* justify-content: center; */
+            /* align-items: center; */
+         }
