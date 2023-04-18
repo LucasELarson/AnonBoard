@@ -1,7 +1,39 @@
+import { getDatabase, onValue, ref } from "firebase/database";
 import { fetchComments } from "./Header";
 
 const Body = () => {
 
+  const db = getDatabase();
+
+    const infoRef = ref(db);
+    onValue(infoRef, (snapshot) => {
+            const messageContainer = document.getElementById('message-container')
+            messageContainer.innerHTML = ''
+            const data = snapshot.val();  
+            let keys = Object.keys(data);
+            const updated = keys.map( key => {
+              return{
+                key, ...data[key]
+              }
+            })
+            const topicPicker = document.getElementById('topic-picker')
+            for(let i = 0; i <updated.length; i++){
+              let keychain = Object.keys(updated[i]);
+              const updatedcomments = keychain.map( key => {
+              return{
+                key, ...updated[i][key].comment
+              }
+              
+              })
+              for( let x = 0; x<topicPicker.children.length; x++){
+                //if topic.child.[i].child[0] === updated then set childe2[1] to updated length
+                if(topicPicker.children[x].children[0].innerHTML === updated[i].key){
+                  topicPicker.children[x].children[1].innerHTML = updatedcomments.length - 1
+                }
+              }
+              // console.log(updatedcomments.length)
+            }             
+    })
   
   return (
     <div id="body">
