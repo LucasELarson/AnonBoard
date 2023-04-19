@@ -5,6 +5,7 @@ const Body = () => {
 
   const db = getDatabase();
 
+    // WHEN THE PAGE IS UPDATED IT GET A NEW COMMENT COUNT PER TOPIC TILE //
     const infoRef = ref(db);
     onValue(infoRef, (snapshot) => {
             const messageContainer = document.getElementById('message-container')
@@ -17,6 +18,8 @@ const Body = () => {
               }
             })
             const topicPicker = document.getElementById('topic-picker')
+
+            // ALLOWS COMMENTS TO BE ITERATED THROUGH TO GET A COMMENT COUNT //
             for(let i = 0; i <updated.length; i++){
               let keychain = Object.keys(updated[i]);
               const updatedcomments = keychain.map( key => {
@@ -25,13 +28,12 @@ const Body = () => {
               }
               
               })
+              // ITERATES THROUGH EACH TOPIC TILE AND ADJUSTS COMMENT COUNT //
               for( let x = 0; x<topicPicker.children.length; x++){
-                //if topic.child.[i].child[0] === updated then set childe2[1] to updated length
                 if(topicPicker.children[x].children[0].innerHTML === updated[i].key){
                   topicPicker.children[x].children[1].innerHTML = updatedcomments.length - 1
                 }
               }
-              // console.log(updatedcomments.length)
             }             
     })
   

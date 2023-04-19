@@ -1,7 +1,24 @@
 
+:root {
+   --shadow-color: 0deg 0% 23%;
+   --shadow-elevation-low:
+     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.59),
+     1.7px 2.7px 3.9px -1.9px hsl(var(--shadow-color) / 0.78);
+   --shadow-elevation-medium:
+     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.55),
+     2.3px 3.7px 5.3px -0.9px hsl(var(--shadow-color) / 0.67),
+     8.4px 13.5px 19.3px -1.9px hsl(var(--shadow-color) / 0.79);
+   --shadow-elevation-high:
+     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.51),
+     4.5px 7.2px 10.3px -0.4px hsl(var(--shadow-color) / 0.57),
+     9.1px 14.7px 21px -0.8px hsl(var(--shadow-color) / 0.62),
+     16.7px 27px 38.6px -1.1px hsl(var(--shadow-color) / 0.68),
+     29.7px 47.9px 68.5px -1.5px hsl(var(--shadow-color) / 0.73),
+     50.4px 81.3px 116.2px -1.9px hsl(var(--shadow-color) / 0.79);
+ }
 
 body{
-   background-color: rgb(67, 67, 67);
+   background-color: rgb(113, 42, 42);
    margin: 0%;
    overflow: scroll;
 }
@@ -11,19 +28,48 @@ body{
 }
 
 #header{
-   background-color: brown;
+   background-color: rgb(113, 42, 42);
    width: 100vw;
-   display: flex;
-   justify-content: center;
+   display: grid;
+   grid-template-columns:1fr 3fr 1fr;
+   justify-items: center;
 }
+
+   #header-title{
+      display: flex;
+      color: black;
+      grid-column: 2/3;
+   }
+
+   #comment-maker{
+      display: flex;
+      color: black;
+      padding-right: 1vw;
+      grid-column: 3/4;
+   }
 
    #comment-container{
       display: none;
+      position: absolute;
+      top: 25vh;
+      background-color: black;
+      height: 25vw;
+      width: 25vw;
    }
+      #text-input{
+         background-color: rgb(141, 151, 151);
+         font-size: 3rem;
+      }
+
+      #submit{
+         background-color: rgb(76, 84, 84);
+         font-size: 3rem;
+      }
 
 #body{
    width: 100vw;
    display: grid;
+   justify-items: center;
 }
 
 body::-webkit-scrollbar{
@@ -32,8 +78,7 @@ body::-webkit-scrollbar{
 
    #topic-picker{
       padding: 1vw;
-         width: 100vw;
-         height: 10vh;
+         width: 95vw;
          display: grid;
          grid-auto-flow: column;
          /* grid-auto-rows: 10vh; */
@@ -43,12 +88,38 @@ body::-webkit-scrollbar{
          overflow-y: hidden;
          overflow-x: scroll;
          justify-content:space-between ;
-         background-color: aqua;
+         background-color: rgb(91, 91, 91);
+         border-radius: 10px;
+         border-style: solid;
+         border-bottom-style: none;
+         border-bottom-style: none;
    }
 
-   #topic-picker::-webkit-scrollbar { 
-      background-color: gray
+   #topic-picker::-webkit-scrollbar, ::-webkit-scrollbar-thumb{
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      
    }
+
+   
+
+   *::-webkit-scrollbar { 
+      background-color: rgb(123, 103, 103); 
+      border-style: solid;
+      border-color: rgb(34, 34, 34);
+      height: 25px;
+   }
+
+   *::-webkit-scrollbar-thumb {
+      background-color: rgb(56, 58, 58);
+      border-style: solid;
+      border-color: rgb(34, 34, 34);
+   }
+
+   *::-webkit-scrollbar-thumb:hover{
+      background-color: rgb(91, 91, 91);
+   }
+
 
       #topic-tile{
          display: grid;
@@ -64,6 +135,7 @@ body::-webkit-scrollbar{
          justify-items: center;
          padding: 5%;
          margin: 1vw;
+         box-shadow: 8.0px 16.0px 16.0px rgba(0, 0, 0, 0.25);
       }
 
          #topic-title{
@@ -89,12 +161,13 @@ body::-webkit-scrollbar{
    }
 
       #topic-prompt{
-         background-color: white;
+         background-color: rgb(142, 142, 142);
          width: 75vw;
          min-height: 3vw;
          max-height: 10vw;
          overflow-y: scroll;
          padding: 1vw;
+         display: flex;
       }
 
       #topic-prompt::-webkit-scrollbar { 
@@ -114,7 +187,7 @@ body::-webkit-scrollbar{
          overflow-y: scroll;
          overflow-x: hidden;
          justify-content:space-around ;
-         background-color: aqua;
+         background-color:rgb(91, 91, 91);
       }
 
       #message-container::-webkit-scrollbar{
@@ -131,7 +204,15 @@ body::-webkit-scrollbar{
             max-height: max-content;
             /* justify-content: center; */
             /* align-items: center; */
+            box-shadow: 8.0px 16.0px 16.0px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
          }
+
+         #message::-webkit-scrollbar, #message::-webkit-scrollbar-thumb{
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+         }
+
 
 #current-topic{
    display: none;
