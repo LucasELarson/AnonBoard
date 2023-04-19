@@ -6,4 +6,4 @@ The number underneath the "Topic Tiles" shows how many comments have been made i
 
 There are no credentials or locally stored information so it is anonymous. 
 
-
+See deployment here: https://lucaselarson.github.io/AnonBoard/
