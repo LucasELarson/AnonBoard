@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AnonBoard/static/css/main.13494868.css",
+    "main.js": "/AnonBoard/static/js/main.b2c77fb7.js",
+    "static/media/VarelaRound-Regular (1).ttf": "/AnonBoard/static/media/VarelaRound-Regular (1).6b0ad79431843e696f58.ttf",
+    "index.html": "/AnonBoard/index.html",
+    "main.13494868.css.map": "/AnonBoard/static/css/main.13494868.css.map",
+    "main.b2c77fb7.js.map": "/AnonBoard/static/js/main.b2c77fb7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.13494868.css",
+    "static/js/main.b2c77fb7.js"
+  ]
+}
