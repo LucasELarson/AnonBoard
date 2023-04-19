@@ -1,21 +1,11 @@
+@font-face {
+   font-family: Varela;
+   src: url(./fonts/VarelaRound-Regular\ \(1\).ttf)
+}
 
-:root {
-   --shadow-color: 0deg 0% 23%;
-   --shadow-elevation-low:
-     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.59),
-     1.7px 2.7px 3.9px -1.9px hsl(var(--shadow-color) / 0.78);
-   --shadow-elevation-medium:
-     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.55),
-     2.3px 3.7px 5.3px -0.9px hsl(var(--shadow-color) / 0.67),
-     8.4px 13.5px 19.3px -1.9px hsl(var(--shadow-color) / 0.79);
-   --shadow-elevation-high:
-     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.51),
-     4.5px 7.2px 10.3px -0.4px hsl(var(--shadow-color) / 0.57),
-     9.1px 14.7px 21px -0.8px hsl(var(--shadow-color) / 0.62),
-     16.7px 27px 38.6px -1.1px hsl(var(--shadow-color) / 0.68),
-     29.7px 47.9px 68.5px -1.5px hsl(var(--shadow-color) / 0.73),
-     50.4px 81.3px 116.2px -1.9px hsl(var(--shadow-color) / 0.79);
- }
+*{
+   font-family: Varela;
+}
 
 body{
    background-color: rgb(113, 42, 42);
@@ -41,11 +31,20 @@ body{
       grid-column: 2/3;
    }
 
+   #header-title:hover{
+      color: rgb(142, 142, 142);
+      font-size: 2em;
+   }
+
    #comment-maker{
       display: flex;
       color: black;
       padding-right: 1vw;
       grid-column: 3/4;
+   }
+
+   #comment-maker:hover{
+      color: rgb(142, 142, 142);
    }
 
    #comment-container{
@@ -126,9 +125,9 @@ body::-webkit-scrollbar{
          background-color: rgb(142, 142, 142);
          justify-content: center;
          min-height: 2.5vw;
-         max-height: max-content;
+         max-height: min-content;
          min-width: 10vw;
-         max-width: max-content;
+         max-width: min-content;
          margin: 5% 0% 5% 0%;
          border-radius: 10px;
          grid-template-rows: 8fr 5fr;
@@ -136,7 +135,16 @@ body::-webkit-scrollbar{
          padding: 5%;
          margin: 1vw;
          box-shadow: 8.0px 16.0px 16.0px rgba(0, 0, 0, 0.25);
+         font-size: 1em;
+         transition: .3s;
+         font-weight: 600;
       }
+
+      #topic-tile:hover{
+         background-color: rgb(110 , 110, 110);
+         box-shadow: 8.0px 16.0px 16.0px rgba(113, 42, 42, 1);
+      }
+
 
          #topic-title{
             display: grid;
@@ -168,6 +176,9 @@ body::-webkit-scrollbar{
          overflow-y: scroll;
          padding: 1vw;
          display: flex;
+         justify-content: center;
+         font-size: 3rem;
+         font-weight: 800;
       }
 
       #topic-prompt::-webkit-scrollbar { 
@@ -177,7 +188,7 @@ body::-webkit-scrollbar{
       #message-container{
          padding: 1vw;
          width: 75vw;
-         height: 95vh;
+         height: 100vh;
          display: grid;
          /* grid-auto-flow: row; */
          /* grid-auto-rows: 10vh; */
@@ -194,6 +205,7 @@ body::-webkit-scrollbar{
          display: none;
       }
 
+
          #message{
             background-color: rgb(142, 142, 142);
             width: 45vw;
@@ -201,7 +213,7 @@ body::-webkit-scrollbar{
             display: flex;
             overflow-y: scroll;
             min-height: 10vh;
-            max-height: max-content;
+            max-height: min-content;
             /* justify-content: center; */
             /* align-items: center; */
             box-shadow: 8.0px 16.0px 16.0px rgba(0, 0, 0, 0.25);
@@ -211,6 +223,10 @@ body::-webkit-scrollbar{
          #message::-webkit-scrollbar, #message::-webkit-scrollbar-thumb{
             border-bottom-right-radius: 10px;
             border-top-right-radius: 10px;
+         }
+
+         #message::-webkit-scrollbar:horizontal{
+            display: none;
          }
 
 
